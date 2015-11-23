@@ -5,7 +5,7 @@ ffi = FFI()
 
 def crc32c_for_file(f, block_size=64*1024):
 	assert block_size >= 1, "block_size must be >= 1, was %r" % (block_size,)
-	mem = ffi.new('char[65536]')
+	mem = ffi.new('char[%d]' % block_size)
 	c = 0
 	arr = ffi.buffer(mem)
 	while True:
