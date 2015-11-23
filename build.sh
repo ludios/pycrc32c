@@ -1,1 +1,1 @@
-CC=clang CFLAGS="-O3 -march=native" pypy build_crc32c.py
+CFLAGS="-O3 -march=native -Wall" pypy build_crc32c.py
