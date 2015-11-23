@@ -18,6 +18,9 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 '''
 
 test_vectors = [
+	{"text": "",
+	"value": 0x00000000},
+
 	{"text": "\x61",
 	"value": 0xc1d04330},
 
