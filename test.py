@@ -1,7 +1,9 @@
 import crc32c
+import random
 
-# Test vectors copied from https://github.com/edmonds/mtbl/blob/master/src/test-crc32c.c
 '''
+Test vectors copied from https://github.com/edmonds/mtbl/blob/master/src/test-crc32c.c
+
 Copyright (c) 2012 by Internet Systems Consortium, Inc. ("ISC")
 
 Permission to use, copy, modify, and/or distribute this software for any
@@ -140,7 +142,20 @@ test_vectors = [
 	"value": 0x24c5d375},
 ]
 
+def chunk_string(string, length):
+	return (string[0+i:length+i] for i in range(0, len(string), length))
+
+
 for v in test_vectors:
-	assert crc32c.sse4_crc32c(0, v["text"]) == v["value"]
+	c = crc32c.sse4_crc32c(0, v["text"])
+	assert c == v["value"], c
+
+	# Test with multiple calls
+	chunks = list(chunk_string(v["text"], random.randint(1, 11)))
+	c = 0
+	for chunk in chunks:
+		c = crc32c.sse4_crc32c(c, chunk)
+	assert c == v["value"], c
+
 
 print "OK"
