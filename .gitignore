@@ -1,4 +1,6 @@
 /__pycache__
 *.pyc
 *.pyo
+*.so
 /build
+/_crc32c.c
