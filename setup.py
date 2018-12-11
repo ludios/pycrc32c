@@ -7,7 +7,7 @@ from distutils.extension import Extension
 
 import build_crc32c
 
-os.environ['CFLAGS'] = " ".join(["-O3", "-march=native", "-msse4.2", "-Wall"])
+os.environ['CFLAGS'] = " ".join(["-O3", "-msse4.2", "-Wall"])
 
 setup(
 	name='pycrc32c',
