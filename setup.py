@@ -8,7 +8,7 @@ os.environ["CFLAGS"] = " ".join(["-O3", "-msse4.2", "-Wall"])
 
 setup(
 	name="pycrc32c",
-	version="2.0.0",
+	version="2.0.1",
 	description="crc32c for Python; uses the Intel CRC32 instruction and thus requires SSE4.2",
 	url="https://github.com/ludios/pycrc32c",
 	author="Ivan Kozik",
