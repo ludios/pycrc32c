@@ -25,5 +25,6 @@ setup(
 		'License :: OSI Approved :: MIT License',
 	],
 	py_modules=['crc32c'],
-	ext_modules=[build_crc32c.ffibuilder.distutils_extension()]
+	ext_modules=[build_crc32c.ffibuilder.distutils_extension()],
+	install_requires=["cffi"]
 )

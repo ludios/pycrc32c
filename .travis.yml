@@ -5,6 +5,8 @@ python:
   - 3.7
 
 install:
+  - travis_retry pip install --upgrade pip setuptools
+  - travis_retry pip install --upgrade .
   - ./setup.py build --build-platlib .
 
 script:
